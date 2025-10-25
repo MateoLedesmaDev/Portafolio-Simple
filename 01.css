@@ -1,0 +1,356 @@
+/* === Reset / Body === */
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #1f1f1f;
+  box-sizing: border-box;
+}
+
+/* === Header === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: #efefef;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.header__logo--img {
+  max-width: 40vh;
+  max-height: 10vh;
+  border-radius: 10px;
+  margin-left: 2em;
+  transition: box-shadow 0.3s;
+}
+
+.header__logo--img:hover {
+  box-shadow: 4px 4px 8px #666f;
+}
+
+.menu-icon {
+  font-size: 2em;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  right: 0;
+  flex-wrap: wrap;
+}
+
+.menu__list {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav-item li {
+  padding: 10px;
+}
+
+.nav-item-copy {
+  display: none;
+}
+
+.nav-item:hover {
+  background-color: #222f;
+  box-shadow: 1px 1px 3px #efefef;
+  border-radius: 4px;
+}
+
+.menu__list a {
+  text-decoration: none;
+  color: #efefef;
+}
+
+/* === Hero / Inicio === */
+.main__home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 90vh;
+  background-image: linear-gradient(transparent, #222f),
+    url(https://cdn.pixabay.com/photo/2019/11/09/14/55/boats-4613735_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #efefef;
+  font-size: 2em;
+}
+
+.main__home h1 {
+  color: #cccaca;
+  text-decoration: underline;
+  text-decoration-thickness: 0.02em;
+  text-underline-offset: 0.25em;
+}
+
+/* === Main Content Sections === */
+.main-content,
+.main-content--tour {
+  width: 100%;
+  min-height: 70vh;
+  background-color: #1f1f1f;
+}
+
+.main-content--tour {
+  min-height: 100vh;
+}
+
+/* === Container Cards === */
+.container__cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 2rem;
+}
+
+.container__cards:last-child {
+  flex: 1 1 100%;
+  margin-top: 5vh;
+}
+
+.container__cards--card,
+.container__cards--card--tour,
+.container__cards--card--tour--1,
+.container__cards--card--tour--2,
+.container__cards--card--tour--3,
+.container__cards--card--tour--4 {
+  flex: 1 1 280px;
+  min-width: 220px;
+  max-width: 100%;
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.container__cards--card {
+  min-height: 15em;
+  background-color: #222f;
+}
+
+.container__cards--card p,
+.container__cards--card--tour p,
+.container__cards--card--tour h4 {
+  color: #efefef; /* Portafolio texto blanco */
+}
+
+.container__cards--card--tour--1 {
+  min-height: 88vh;
+  background-image: radial-gradient(transparent, #222),
+    url(https://cdn.pixabay.com/photo/2014/08/15/11/29/beach-418742_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #efefef;
+}
+
+.container__cards--card--tour--2 {
+  min-height: 88vh;
+  background-image: radial-gradient(transparent, #222),
+    url(https://cdn.pixabay.com/photo/2023/03/22/19/24/nature-7870374_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #efefef;
+}
+
+.container__cards--card--tour--3 {
+  min-height: 88vh;
+  background-image: radial-gradient(transparent, #222),
+    url(https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #efefef;
+}
+
+.container__cards--card--tour--4 {
+  min-height: 88vh;
+  background-image: radial-gradient(transparent, #222),
+    url(https://cdn.pixabay.com/photo/2024/02/23/18/59/desert-8592629_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #efefef;
+}
+
+.container__cards--card--tour--5 {
+  background: none;
+}
+
+.container__cards--card--tour:hover,
+.container__cards--card:hover {
+  transform: translateY(-5px);
+}
+
+.container__cards--card img {
+  max-width: 1.8em;
+  max-height: 1.8em;
+  margin-right: 1em;
+}
+
+.container__cards--card h4 {
+  font-size: 1em;
+  color: #efefef;
+  text-align: center;
+}
+
+.container__cards--card p {
+  font-size: 0.9em;
+  color: #efefef;
+  text-align: center;
+}
+
+/* === Cuestionario === */
+.section-quiz {
+
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1rem;
+}
+
+.main-content--quiz {
+  min-width: 75vw;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+  background-color: #1f1f1f;
+  color: #efefef;
+}
+
+.main-content--quiz h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #e74c3c;
+}
+
+.main-content--quiz p {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #bbb;
+}
+
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quiz-form label { color: #ddd; }
+.quiz-form input,
+.quiz-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.quiz-form input:focus,
+.quiz-form textarea:focus { outline: 2px solid #e74c3c; }
+
+.quiz-form button {
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* === Responsive === */
+@media (max-width: 1200px) {
+  .container__cards--card { flex: 1 1 45%; }
+}
+
+@media (max-width: 900px) {
+  .container__cards--card { flex: 1 1 45%; }
+  .main-content--tour { margin-top: 10vh; }
+  .section-quiz { padding-top: 6rem; }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: fixed; /* siempre fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* ocupa toda la pantalla */
+    background-color: rgba(0, 0, 0, 0.95); /* fondo oscuro semi-transparente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* encima de todo */
+    overflow-y: auto; /* permite scroll dentro del menú */
+  }
+
+  .menu__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    width: 100%;
+  }
+
+  .menu__list a {
+    color: #efefef;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+
+  .nav-item-copy {
+    display: block;
+    font-size: 0.8em;
+    text-decoration: underline;
+  }
+
+  .menu-icon {
+    display: flex;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* Activar menú al checkbox */
+  .menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+  .container__cards--card { flex: 1 1 100%; }
+  .container__cards { padding: 1rem; }
+  .section-quiz { padding-top: 8rem; }
+}
+

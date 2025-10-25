@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="01.css">
+  <title>Portafolio — Mateo Ledesma</title>
+</head>
+<body>
+
+  <header>
+    <div class="header" role="banner">
+
+      <!-- Logo -->
+      <div class="header__logo">
+        <img class="header__logo--img" src="eagle-4652483_1280.jpg" alt="Logotipo Mateo Ledesma">
+      </div>
+
+      <!-- Menu Toggle -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación">
+      <label for="menu-toggle" class="menu-icon" aria-controls="menu">☰</label>
+
+      <!-- Navegación -->
+      <nav class="menu" id="menu" role="navigation" aria-label="Menú principal">
+        <ul class="menu__list">
+          <div class="nav-item"><li><a href="#home">INICIO</a></li></div>
+          <div class="nav-item"><li><a href="#about">SOBRE MÍ</a></li></div>
+          <div class="nav-item"><li><a href="#portfolio">PORTAFOLIO</a></li></div>
+          <div class="nav-item"><li><a href="#contact">CONTACTO</a></li></div>
+          <div class="nav-item-copy"><li><a href="#copyright">COPYRIGHT & MATEO LEDESMA</a></li></div>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Hero / Inicio -->
+    <div class="main__home" id="home">
+      <h1>Mateo Ledesma</h1>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Contenedor principal de cards -->
+    <div class="main-content" id="about">
+
+      <div class="container__cards">
+        <div class="container__cards--card">
+          <h4><img src="target.png" alt="Metas"> OBJETIVOS</h4>
+          <p>Definir metas profesionales, proyectos completados y objetivos futuros.</p>
+        </div>
+
+        <div class="container__cards--card">
+          <h4><img src="airplane.png" alt="Diseño"> DISEÑO</h4>
+          <p>Presentar trabajos de UI/UX y diseño de interfaces responsivas.</p>
+        </div>
+
+        <div class="container__cards--card">
+          <h4><img src="meteor-rain.png" alt="Experiencia"> EXPERIENCIA</h4>
+          <p>Experiencia profesional, proyectos destacados y logros alcanzados.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contenedor de tour / proyectos destacados -->
+    <div class="main-content--tour" id="portfolio">
+
+      <div class="container__cards">
+
+        <div class="container__cards--card--tour--1">
+          <h4>Propuesta UI</h4>
+        </div>
+
+        <div class="container__cards--card--tour--2">
+          <h4>Animaciones CSS</h4>
+        </div>
+
+        <div class="container__cards--card--tour--3">
+          <h4>Accesibilidad</h4>
+        </div>
+
+        <div class="container__cards--card--tour--4">
+          <h4>Proyectos Destacados</h4>
+        </div>
+
+
+    <div class="container__cards--card--tour--5" id="contact">
+      <div class="section-quiz">
+        <div class="main-content--quiz">
+          <h2 id="quiz-title">Cuestionario</h2>
+          <p>Por favor completa este formulario.</p>
+        
+          <form class="quiz-form" id="quiz-form" aria-labelledby="quiz-title">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+          
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+          
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+          </div>
+        
+        </div>
+      
+      </main>
+
+      <!-- Footer -->
+      <footer style="background-color: #222; color: #fff; text-align: center; padding: 1.5rem; margin-top: 2rem;">
+        <p>&copy; 2025 Mateo Ledesma. Todos los derechos reservados.</p>
+      </footer>
+
+
+
+      <script>
+document.getElementById("quiz-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // Evita que se recargue la página
+
+  // Captura los valores
+  let nombre = document.getElementById("nombre").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let mensaje = document.getElementById("mensaje").value.trim();
+
+  // Validación básica
+  if (!nombre || !email || !mensaje) {
+    alert("Por favor completa todos los campos.");
+    return;
+  }
+
+
+  let phone = "525530657197"; 
+
+  // Construye el mensaje y lo codifica
+  let texto = `Hola, soy ${nombre} (${email}). ${mensaje}`;
+  let textoEncoded = encodeURIComponent(texto);
+
+  // Detecta si es móvil
+  let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  // URL según dispositivo
+  let url = isMobile 
+      ? `https://wa.me/${phone}?text=${textoEncoded}` 
+      : `https://web.whatsapp.com/send?phone=${phone}&text=${textoEncoded}`;
+
+  // Abrir WhatsApp en nueva pestaña para evitar bloqueos
+  window.open(url, "_blank");
+});
+</script>
+
+
+</body>
+</html>
